@@ -51,6 +51,7 @@
                             pushed = 1;
                             lastClientX = e.clientX;
                             lastClientY = e.clientY;
+                            this.classList.add("grab");
 
                             e.preventDefault();
                         }
@@ -58,7 +59,10 @@
                 );
 
                 _window[addEventListener](
-                    mouseup, cont.mu = function() {pushed = 0;}, 0
+                    mouseup, cont.mu = function() {
+                        pushed = 0;
+                        el.classList.remove("grab");
+                    }, 0
                 );
 
                 _window[addEventListener](
